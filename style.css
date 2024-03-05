@@ -1,0 +1,378 @@
+:root {
+  --background-primary: #c8e6c9;
+  --green-800: #2e7d32;
+  --black: hwb(0 0% 100%);
+  --card-background: #f5f5f5;
+  --white: #ffffff;
+  --white-67: rgba(256, 256, 256, 0.67);
+  --black-87: rgba(0, 0, 0, 0.87);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.container {
+  background-color: var(--background-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  perspective: 1200px;
+}
+
+.container .card {
+  width: 80%;
+  max-width: 1100px;
+  height: 660px;
+  border-radius: 15px;
+  background-color: var(--card-background);
+  box-shadow: 0px 5px 10px 0px var(--black-87);
+  position: relative;
+  display: flex;
+}
+
+/* contacts */
+
+section.contacts {
+  width: 33%;
+  min-width: fit-content;
+  height: 100%;
+  border-radius: 15px 0 0 15px;
+  background-color: var(--green-800);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: flex-end;
+  padding: 0 0 55px 25px;
+  position: relative;
+  color: var(--white);
+}
+
+section.contacts .phone {
+  margin-bottom: 55px;
+}
+
+section.contacts .email > span,
+section.contacts .phone > span {
+  color: var(--white-67);
+}
+
+section.contacts .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+section.contacts .wrapper .contacts-title {
+  font-weight: 600;
+}
+
+section.contacts .line {
+  height: 25px;
+  width: 100%;
+  background-color: var(--white);
+  position: absolute;
+  left: 0;
+  top: 75%;
+}
+
+section.contacts .social .icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+section.contacts .social .icon-wrapper .icon {
+  width: 22px;
+  height: 22px;
+  background-size: cover;
+  opacity: 0.67;
+  filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.2));
+  transition: opacity 500ms;
+}
+
+section.contacts .social .icon-wrapper .icon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.social .icon-wrapper a:first-child .icon {
+  background-image: url("./icons/github-icon.svg");
+}
+
+.social .icon-wrapper a:nth-child(2) .icon {
+  background-image: url("./icons/linkedin-icon.svg");
+}
+
+.social .icon-wrapper a:last-child .icon {
+  background-image: url("./icons/twitter-icon.svg");
+}
+
+/*user photo*/
+
+.user-photo {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 48%;
+  left: 40%;
+  height: 80%;
+  width: 35%;
+  z-index: 4;
+}
+
+/*user photo shape*/
+
+.user-photo .shape-rectangle {
+  width: 35px;
+  height: 15px;
+  position: absolute;
+  top: 20px;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background: #ccc;
+}
+
+.user-photo .shape-square {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background: #ccc;
+}
+
+.user-photo .shape-square:last-child {
+  top: 100%;
+  left: 30%;
+}
+
+.user-photo > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* info */
+
+section.info {
+  width: 67%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+section.info .wrapper {
+  margin-left: 290px;
+  padding-left: 10px;
+  width: 50%;
+  z-index: 3;
+  background-color: var(--card-background);
+  mix-blend-mode: color-dodge;
+}
+
+section.info .wrapper .title span {
+  font-size: 2.875rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+section.info .wrapper .title .name {
+  color: var(--green-800);
+}
+
+section.info .wrapper .title .lastname {
+  color: var(--black-87);
+}
+
+section.info .wrapper .subtitle {
+  margin: 15px 0 10px 0;
+}
+
+section.info .wrapper .subtitle span {
+  font-size: 1.187rem;
+  font-weight: 600;
+}
+
+section.info .wrapper > ul,
+section.info .wrapper > p {
+  color: var(--black-87);
+}
+
+section.info .wrapper > ul {
+  padding-left: 25px;
+}
+
+section.info .wrapper > ul li {
+  margin: 7px 0;
+}
+
+/*info shape*/
+
+section.info .shape-big {
+  background-color: var(--green-800);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  animation: move-loop-big 300s infinite linear,
+    change-shape-big 60s infinite linear;
+  z-index: 2;
+}
+
+section.info .shape-small {
+  background-color: var(--green-800);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 30px;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  animation: move-loop-small 300s infinite linear,
+    change-shape-small 60s infinite linear;
+  z-index: 2;
+}
+
+/* animation */
+
+@keyframes move-loop-big {
+  0% {
+    top: 0;
+    left: 100%;
+  }
+
+  25% {
+    top: 100px;
+    left: 75%;
+  }
+
+  50% {
+    top: 200px;
+    left: 40%;
+  }
+
+  75% {
+    top: 100%;
+    left: 75%;
+  }
+
+  100% {
+    top: 0;
+    left: 100%;
+  }
+}
+
+@keyframes move-loop-small {
+  0% {
+    bottom: 30px;
+    left: 37%;
+  }
+
+  25% {
+    bottom: 50%;
+    left: 50%;
+  }
+
+  50% {
+    bottom: 90%;
+    left: 80%;
+  }
+
+  75% {
+    bottom: 45%;
+    left: 100%;
+  }
+
+  100% {
+    bottom: 30px;
+    left: 37%;
+  }
+}
+
+@keyframes change-shape-big {
+  0% {
+    width: 150px;
+    height: 150px;
+  }
+
+  25% {
+    width: 100px;
+    height: 100px;
+  }
+
+  50% {
+    width: 50px;
+    height: 50px;
+  }
+
+  75% {
+    width: 100px;
+    height: 100px;
+  }
+
+  100% {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes change-shape-small {
+  0% {
+    width: 50px;
+    height: 50px;
+  }
+
+  25% {
+    width: 100px;
+    height: 100px;
+  }
+
+  50% {
+    width: 150px;
+    height: 150px;
+  }
+
+  75% {
+    width: 100px;
+    height: 100px;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+  }
+}
